@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/',['as'=>'admin.home','uses'=>'AdminController@index']);
 Route::get('/dataset',['as'=>'admin.dataset','uses'=>'AdminController@dataset']);
+Route::get('/dataedit/{id}',['as'=>'admin.data.edit','uses'=>'AdminController@edit']);
+Route::post('/delete/{id}',['as'=>'admin.data.delete','uses'=>'AdminController@delete']);

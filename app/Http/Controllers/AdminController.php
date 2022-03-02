@@ -12,6 +12,13 @@ class AdminController extends Controller
         return view('home');
     }
     public function dataset(){
-        return datatables(Client::select('name','email','phone','company'))->toJson();
+        return datatables(Client::select('client_id','name','email','phone','company'))->toJson();
     }
-} 
+    public function edit($id){
+        dd('edit page');
+    }
+    public function delete($id){
+            Client::where('client_id',$id)->delete();
+        return redirect ('/');
+    }
+}
